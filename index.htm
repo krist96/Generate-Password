@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    
+        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    </head>
+    <body>
+        <b>Naciśnij przycisk, aby wygenerować nowe 30 znakowe hasło</b>
+    
+        <button id="getPassword" class="btn"> Generuj hasło </button>
+
+        <div>
+            <b>Wygenerowane Hasło: </b> <br>
+            <output id="showPassword" class="output"></output>
+        </div>
+    
+        
+<script>
+    class Generate 
+    {
+        constructor(showPassword)
+        {
+            this.showPassword = showPassword;
+        }
+
+        getPasswordMethod() 
+        {
+            let pass = "";
+        
+            for(let i = 0; i < 30; i++) 
+            {
+                let temp;
+                temp = Math.round(Math.random() * 92) + 34;
+                console.log(temp);
+                pass += String.fromCharCode(temp);
+            }
+            console.log(pass);
+            return showPassword.value = pass;
+        }
+    }
+
+
+    let getPassword = document.getElementById("getPassword");
+    let showPassword = document.getElementById("showPassword");
+    let generate = new Generate(showPassword);
+
+    getPassword.addEventListener("click", generate.getPasswordMethod);
+
+</script>
+
+    </body>
+</html>
